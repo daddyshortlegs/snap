@@ -7,7 +7,7 @@ It's interesting from a TDD point of view as I had tried the 'Chicago' method (w
 with the 'London' method (that mocks everything). This method proved far easier and helped drive the design. So it
 reinforced to me what the London 'mockist' approach is good for, design.
 
-# The Kata
+## The Kata
 
 You have a deck of 52 shuffled cards. There are 2 computer controlled players to simulate two real players. 
 Each player turns a card. When a subsequent card is turned that matches the value of the previous card, the player with
