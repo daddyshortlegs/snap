@@ -1,16 +1,10 @@
 package com.andy;
 
 class ThreadSleepWrapper {
-    private int time;
-
-    public ThreadSleepWrapper(int time) {
-        this.time = time;
-    }
-
-    public void invoke() {
+    void sleep(int time) {
         try {
             Thread.sleep(time);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
     }
 }

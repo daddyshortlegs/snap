@@ -7,7 +7,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -17,14 +16,15 @@ public class PlayerTest {
     private Player desmond;
     private Player percy;
 
-
     @Mock
     private RandomThinkTime thinkTime;
+    @Mock
+    private ThreadSleepWrapper sleepWrapper;
 
     @Before
     public void setup() {
-        desmond = new Player("Desmond", thinkTime);
-        percy = new Player("Percy", thinkTime);
+        desmond = new Player("Desmond", thinkTime, sleepWrapper);
+        percy = new Player("Percy", thinkTime, sleepWrapper);
     }
 
     @Test
@@ -35,10 +35,10 @@ public class PlayerTest {
         assertEquals("3H", percy.takeCard(deck));
         assertEquals("4H", percy.takeCard(deck));
         assertEquals("5H", percy.takeCard(deck));
-        verify(thinkTime).think(100);
-        verify(thinkTime).think(200);
-        verify(thinkTime).think(500);
-        verify(thinkTime).think(400);
+        verify(sleepWrapper).sleep(100);
+        verify(sleepWrapper).sleep(200);
+        verify(sleepWrapper).sleep(500);
+        verify(sleepWrapper).sleep(400);
     }
 
 }

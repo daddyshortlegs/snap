@@ -14,10 +14,9 @@ public class Snap {
     }
 
     public static void main(String[] args) {
-        RandomThinkTime thinkTime = new RandomThinkTime();
         Snap snap = new Snap(new Deck(),
-                new Player("Derek", thinkTime),
-                new Player("James", thinkTime),
+                new Player("Derek"),
+                new Player("James"),
                 new GameOutputter());
 
         snap.play();

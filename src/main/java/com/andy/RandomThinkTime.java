@@ -13,11 +13,4 @@ class RandomThinkTime {
         return iterator.nextInt();
     }
 
-    void think(int time) {
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-        }
-    }
-
 }
