@@ -2,16 +2,16 @@ package com.andy;
 
 class Player {
     private final String name;
-    private RandomThinkTime thinkTime;
+    private BoundedRandomTime thinkTime;
     private ThreadSleepWrapper sleepWrapper;
 
     Player(String name) {
         this.name = name;
-        this.thinkTime = new RandomThinkTime();
+        this.thinkTime = new BoundedRandomTime(200, 1500);
         this.sleepWrapper = new ThreadSleepWrapper();
     }
 
-    Player(String name, RandomThinkTime thinkTime, ThreadSleepWrapper sleepWrapper) {
+    Player(String name, BoundedRandomTime thinkTime, ThreadSleepWrapper sleepWrapper) {
         this.name = name;
         this.thinkTime = thinkTime;
         this.sleepWrapper = sleepWrapper;

@@ -17,7 +17,7 @@ public class PlayerTest {
     private Player percy;
 
     @Mock
-    private RandomThinkTime thinkTime;
+    private BoundedRandomTime thinkTime;
     @Mock
     private ThreadSleepWrapper sleepWrapper;
 

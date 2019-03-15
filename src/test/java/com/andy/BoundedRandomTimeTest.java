@@ -4,11 +4,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class RandomThinkTimeTest {
+public class BoundedRandomTimeTest {
 
     @Test
     public void reactionTimeShouldBeBetween200and1500Ms() {
-        RandomThinkTime thinkTime = new RandomThinkTime();
+        BoundedRandomTime thinkTime = new BoundedRandomTime(200, 1500);
 
         for (int i = 0; i < 100; i++) {
             int reactionTime = thinkTime.getThinkingTime();
