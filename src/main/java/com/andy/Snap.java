@@ -44,20 +44,18 @@ public class Snap {
         return i % 2 == 0 ? takeTurn(player1) : takeTurn(player2);
     }
 
+    private String takeTurn(Player player) {
+        String card = player.takeCard(deck);
+        outputter.output(player.getName() + " turns '" + card + "'");
+        return card;
+    }
+
     private boolean isSnap(String previousCard, String card) {
         if (previousCard.equals("") || card == null) {
             return false;
         }
 
         return previousCard.charAt(0) == card.charAt(0);
-    }
-
-    private void outputEndingGameState(boolean snap) {
-        if (snap) {
-            decideWinner();
-        } else {
-            outputter.output("No winner");
-        }
     }
 
     private void decideWinner() {
@@ -68,10 +66,12 @@ public class Snap {
         }
     }
 
-    private String takeTurn(Player player) {
-        String card = player.takeCard(deck);
-        outputter.output(player.getName() + " turns '" + card + "'");
-        return card;
+    private void outputEndingGameState(boolean snap) {
+        if (snap) {
+            decideWinner();
+        } else {
+            outputter.output("No winner");
+        }
     }
 
 }

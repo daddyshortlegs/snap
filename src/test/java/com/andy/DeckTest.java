@@ -9,7 +9,8 @@ import static org.junit.Assert.*;
 
 public class DeckTest {
 
-    Deck deck;
+    private Deck deck;
+
     @Before
     public void setup() {
         deck = new Deck();

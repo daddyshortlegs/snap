@@ -26,7 +26,7 @@ class Deck {
         String card = null;
         try {
             card = cards.pop();
-        } catch (EmptyStackException e) {
+        } catch (EmptyStackException ignored) {
         }
 
         return card;
